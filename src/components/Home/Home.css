@@ -1,4 +1,6 @@
 .home {
   flex: 80%;
-  margin-left: 500px;
+}
+.home h1 {
+  text-align: center;
 }
