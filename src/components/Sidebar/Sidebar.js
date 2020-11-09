@@ -8,7 +8,9 @@ import "./Sidebar.css";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <h2>Cafe Management System</h2>
+      <Link to="/">
+        <h2>Cafe Management System</h2>
+      </Link>
 
       {SidebarData.map((val, key) => {
         return (

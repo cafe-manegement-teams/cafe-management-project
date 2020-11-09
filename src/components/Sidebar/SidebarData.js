@@ -1,17 +1,46 @@
 import React from "react";
 
-import HomeIcon from "@material-ui/icons/Home";
-import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
+import PersonIcon from "@material-ui/icons/Person";
+import HouseIcon from "@material-ui/icons/House";
+import ClearAllIcon from "@material-ui/icons/ClearAll";
+import ReceiptIcon from "@material-ui/icons/Receipt";
+import AssessmentIcon from "@material-ui/icons/Assessment";
 
 export const SidebarData = [
   {
-    title: "Home",
-    icon: <HomeIcon />,
-    link: "/",
+    title: "Nhân Viên",
+    icon: <PersonIcon />,
+    link: "/staff",
   },
   {
-    title: "Employees",
-    icon: <AssignmentIndIcon />,
-    link: "/staff",
+    title: "Danh Sách Hàng Hóa",
+    icon: <ClearAllIcon />,
+    link: "/goods",
+  },
+  {
+    title: "Danh Sách Kho Hàng",
+    icon: <HouseIcon />,
+    link: "/warehouses",
+  },
+  {
+    title: "Danh Sách Phiếu Nhập",
+    icon: <ReceiptIcon />,
+    link: "/receiptbill",
+  },
+  {
+    title: "Danh Sách Phiếu Xuất",
+    icon: <ReceiptIcon />,
+    link: "/deliverybill",
+  },
+  {
+    title: "Nhà Cung Cấp",
+    icon: <PersonIcon />,
+    link: "/supplier",
+  },
+
+  {
+    title: "Thống Kê",
+    icon: <AssessmentIcon />,
+    link: "/report",
   },
 ];
