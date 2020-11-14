@@ -66,6 +66,7 @@ function App() {
       </Route>
        <Route exact path="/login">
        <div className="App">
+         <Sidebar />
          <Login />
          </div>
       </Route>
