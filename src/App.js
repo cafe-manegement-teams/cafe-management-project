@@ -8,6 +8,7 @@ import Warehouses from "./components/WareHouses/WareHouses";
 import Receipt from "./components/Receipt/Receipt";
 import Delivery from "./components/Delivery/Delivery";
 import Supplier from "./components/Supplier/Supplier";
+import Login from "./components/Login/Login";
 
 import "./App.css";
 
@@ -57,13 +58,18 @@ function App() {
           <Supplier />
         </div>
       </Route>
-
       <Route path="/report">
         <div className="App">
           <Sidebar />
           <Report />
         </div>
       </Route>
+       <Route exact path="/login">
+       <div className="App">
+         <Login />
+         </div>
+      </Route>
+      
     </Switch>
   );
 }
