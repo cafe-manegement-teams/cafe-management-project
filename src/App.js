@@ -2,7 +2,9 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Staff from "./components/Staff/Staff";
 import Sidebar from "./components/Sidebar/Sidebar";
-import Report from "./components/Report/Report";
+import CostReport from "./components/CostReport/CostReport";
+import SaleReport from "./components/SaleReport/SaleReport";
+import RevenueReport from "./components/RevenueReport/RevenueReport";
 import Goods from "./components/Goods/Goods";
 import Warehouses from "./components/WareHouses/WareHouses";
 import Receipt from "./components/Receipt/Receipt";
@@ -63,13 +65,6 @@ function App() {
         </div>
       </Route>
 
-      <Route path="/report">
-        <div className="App">
-          <Sidebar />
-          <Report />
-        </div>
-      </Route>
-
       <Route path="/report/CostReport">
         <div className="App">
           <Sidebar />
@@ -90,7 +85,7 @@ function App() {
           <SaleReport />
         </div>
       </Route>
-
+      
     </Switch>
   );
 }

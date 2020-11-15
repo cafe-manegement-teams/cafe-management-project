@@ -41,18 +41,23 @@ export const SidebarData = [
   {
     title: "Thống Kê Chi Phí",
     icon: <AssessmentIcon />,
-    link: "/report/costreport",
+    link: "/report/CostReport",
   },
 
   {
     title: "Thống Kê Bán Hàng",
     icon: <AssessmentIcon />,
-    link: "/report/salereport",
+    link: "/Report/SaleReport",
   },
 
   {
     title: "Thống Kê Doanh Thu",
     icon: <AssessmentIcon />,
-    link: "/report/revenuereport",
+    link: "/Report/RevenueReport",
+  },
+  {
+    title: "Login",
+    icon: <ClearAllIcon />,
+    link: "/login",
   },
 ];
