@@ -39,8 +39,20 @@ export const SidebarData = [
   },
 
   {
-    title: "Thống Kê",
+    title: "Thống Kê Chi Phí",
     icon: <AssessmentIcon />,
-    link: "/report",
+    link: "/report/costreport",
+  },
+
+  {
+    title: "Thống Kê Bán Hàng",
+    icon: <AssessmentIcon />,
+    link: "/report/salereport",
+  },
+
+  {
+    title: "Thống Kê Doanh Thu",
+    icon: <AssessmentIcon />,
+    link: "/report/revenuereport",
   },
 ];

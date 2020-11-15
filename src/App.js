@@ -20,30 +20,35 @@ function App() {
           <Home />
         </div>
       </Route>
+
       <Route path="/staff">
         <div className="App">
           <Sidebar />
           <Staff />
         </div>
       </Route>
+
       <Route path="/goods">
         <div className="App">
           <Sidebar />
           <Goods />
         </div>
       </Route>
+      
       <Route path="/warehouses">
         <div className="App">
           <Sidebar />
           <Warehouses />
         </div>
       </Route>
+
       <Route path="/receiptbill">
         <div className="App">
           <Sidebar />
           <Receipt />
         </div>
       </Route>
+
       <Route path="/deliverybill">
         <div className="App">
           <Sidebar />
@@ -64,6 +69,28 @@ function App() {
           <Report />
         </div>
       </Route>
+
+      <Route path="/report/CostReport">
+        <div className="App">
+          <Sidebar />
+          <CostReport />
+        </div>
+      </Route>
+
+      <Route path="/report/RevenueReport">
+        <div className="App">
+          <Sidebar />
+          <RevenueReport />
+        </div>
+      </Route>
+
+      <Route path="/report/SaleReport">
+        <div className="App">
+          <Sidebar />
+          <SaleReport />
+        </div>
+      </Route>
+
     </Switch>
   );
 }

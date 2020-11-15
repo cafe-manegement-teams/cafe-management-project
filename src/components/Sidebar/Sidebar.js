@@ -8,13 +8,9 @@ import "./Sidebar.css";
 function Sidebar() {
   return (
     <div className="sidebar">
-<<<<<<< HEAD
-      <h2>Cafe </h2> <h2>Management System</h2>
-=======
       <Link to="/">
         <h2>Cafe Management System</h2>
       </Link>
->>>>>>> 8406a3b18fbdfc3fec0f873f40cd0c4d06564ff3
 
       {SidebarData.map((val, key) => {
         return (
