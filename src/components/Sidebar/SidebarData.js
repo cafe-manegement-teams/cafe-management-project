@@ -55,9 +55,4 @@ export const SidebarData = [
     icon: <AssessmentIcon />,
     link: "/Report/RevenueReport",
   },
-  {
-    title: "Login",
-    icon: <ClearAllIcon />,
-    link: "/login",
-  },
 ];
