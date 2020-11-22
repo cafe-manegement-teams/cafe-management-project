@@ -11,6 +11,10 @@ import Receipt from "./components/Receipt/Receipt";
 import Delivery from "./components/Delivery/Delivery";
 import Supplier from "./components/Supplier/Supplier";
 import CreateGoods from "./components/Goods/CreateGoods";
+import EditGoods from "./components/Goods/EditGoods";
+import CreateWarehouse from "./components/WareHouses/CreateWarehouse";
+import EditWarehouse from "./components/WareHouses/EditWarehouse";
+
 
 import "./App.css";
 
@@ -42,12 +46,32 @@ function App() {
           <CreateGoods />
         </div>
       </Route>
-      <Route path="/warehouses">
+      <Route path="/goods/edit">
+        <div className="App">
+          <Sidebar />
+          <EditGoods  />
+        </div>
+      </Route>
+      // warehouse
+      <Route path="/warehouses" exact>
         <div className="App">
           <Sidebar />
           <Warehouses />
         </div>
       </Route>
+      <Route path="/warehouses/create" >
+        <div className="App">
+          <Sidebar />
+          <CreateWarehouse />
+        </div>
+      </Route>
+      <Route path="/warehouses/edit" >
+        <div className="App">
+          <Sidebar />
+          <EditWarehouse />
+        </div>
+      </Route>
+
       <Route path="/receiptbill">
         <div className="App">
           <Sidebar />

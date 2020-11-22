@@ -11,7 +11,7 @@ const columns = [
   { field: "id", headerName: "Mã Hàng Hóa", width: 150 },
   { field: "nameGood", headerName: "Tên Hàng Hóa", width: 230 },
   { field: "unit", headerName: "Đơn Vị Tính", width: 230 },
-  { field: "price", headerName: "Giá", width: 230 },
+  { field: "price", headerName: "Giá", width: 230 }
 ];
 
 const rows = [

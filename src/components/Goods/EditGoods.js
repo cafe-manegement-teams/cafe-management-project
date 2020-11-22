@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 
 import * as Yup from "yup";
+import "./EditGoods.css";
 
-import "./CreateGoods.css";
-
-function CreateGoods() {
+function EditGoods() {
   const formik = useFormik({
     initialValues: {
       MaHangHoa: "",
@@ -33,9 +32,8 @@ function CreateGoods() {
     },
   });
   return (
-
     <div className="form__submit">
-      <h1>Tạo Hàng Hóa</h1>
+      <h1>SUA HANG HOA</h1>
       <form onSubmit={formik.handleSubmit} className="form">
         <label htmlFor="MaHangHoa">MaHangHoa</label>
         <input
@@ -86,14 +84,17 @@ function CreateGoods() {
           <div className="error">{formik.errors.Gia}</div>
         ) : null}
         <div className="button">
-          
-            <Link to="/goods" className="button__cancel">Cancel</Link>
-          
-          <button type="submit" className="button__save">Save</button>
+          <Link to="/goods" className="button__cancel">
+            Cancel
+          </Link>
+
+          <button type="submit" className="button__save">
+            Save
+          </button>
         </div>
       </form>
     </div>
   );
 }
 
-export default CreateGoods;
+export default EditGoods;
