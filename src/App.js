@@ -2,9 +2,7 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Staff from "./components/Staff/Staff";
 import Sidebar from "./components/Sidebar/Sidebar";
-import CostReport from "./components/CostReport/CostReport";
-import SaleReport from "./components/SaleReport/SaleReport";
-import RevenueReport from "./components/RevenueReport/RevenueReport";
+import Report from "./components/Report/Report";
 import Goods from "./components/Goods/Goods";
 import Warehouses from "./components/WareHouses/WareHouses";
 import Receipt from "./components/Receipt/Receipt";
@@ -90,24 +88,13 @@ function App() {
           <Supplier />
         </div>
       </Route>
-      <Route path="/report/CostReport">
+
+      <Route path="/report">
         <div className="App">
           <Sidebar />
-          <CostReport />
+          <Report />
         </div>
-      </Route>
-      <Route path="/report/RevenueReport">
-        <div className="App">
-          <Sidebar />
-          <RevenueReport />
-        </div>
-      </Route>
-      <Route path="/report/SaleReport">
-        <div className="App">
-          <Sidebar />
-          <SaleReport />
-        </div>
-      </Route>
+      </Route> 
     </Switch>
   );
 }
