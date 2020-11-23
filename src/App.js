@@ -12,6 +12,8 @@ import CreateGoods from "./components/Goods/CreateGoods";
 import EditGoods from "./components/Goods/EditGoods";
 import CreateWarehouse from "./components/WareHouses/CreateWarehouse";
 import EditWarehouse from "./components/WareHouses/EditWarehouse";
+import CreateSupplier from "./components/Supplier/CreateSupplier"
+import EditSupplier from "./components/Supplier/EditSupplier"
 
 
 import "./App.css";
@@ -82,10 +84,24 @@ function App() {
           <Delivery />
         </div>
       </Route>
-      <Route path="/supplier">
+      
+      // supplier
+      <Route path="/supplier" exact>
         <div className="App">
           <Sidebar />
           <Supplier />
+        </div>
+      </Route>
+      <Route path="/supplier/create" >
+        <div className="App">
+          <Sidebar />
+          <CreateSupplier />
+        </div>
+      </Route>
+      <Route path="/supplier/edit" >
+        <div className="App">
+          <Sidebar />
+          <EditSupplier />
         </div>
       </Route>
 

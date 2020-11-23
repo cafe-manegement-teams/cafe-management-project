@@ -1,0 +1,47 @@
+.supplier {
+    margin-left: 20px;
+    width: 1050px;
+  }
+  .supplier .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header__middle {
+    display: flex;
+    min-width: 100px;
+    position: relative;
+  }
+  .header__middle .header__middle--icon{
+      position: absolute;
+      top: 1px;
+      left: 8px;
+      width: 14px;
+  }
+  .header__middle .header__middle--input{
+      border: 1px solid grey;
+      border-radius: 5px;
+      height: 20px;
+      width: 100%;
+      padding: 2px 23px 2px 30px;
+      outline: 0;
+      background-color: #f5f5f5;
+  }
+  .header__middle .header__middle--input:hover, .header__middle .header__middle--input:focus{
+      border: 1.5px solid #037afc;
+      background-color: white;
+  }
+  .header__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+  }
+  .header__right:hover {
+    background-color:#F5F5F5;
+    cursor: pointer;
+  }
+  
