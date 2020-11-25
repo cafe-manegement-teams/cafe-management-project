@@ -1,44 +1,60 @@
-import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import "./Login.css";
+import React, {useState} from 'react';
+import { Link } from "react-router-dom";
 
-export default function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
 
-  function validateForm() {
-    return username.length > 0 && password.length > 0;
+
+function Login(){
+  const [details,setDetails]=useState({username:"",password:""});
+  const submitHandler = e => {
+        e.preventDefault();
+        Login(details);}
+  const adminUser={
+    username: "Admin",
+    password: "123"
   }
+  const[user,setUser]= useState({username:"",password:""});
+  const[error,setError]= useState("");
+  const Login = details => {
+    console.log(details);
 
-  function handleSubmit(event) {
-    event.preventDefault();
+    if(details.username === adminUser.username && details.password === adminUser.password){
+    console.log("Logged in");
+    setUser({
+      username: details.username,
+      password: details.password
+    });}
+    else {
+      console.log("Username or Password is wrong");
+      setError("Username or Password is wrong")
+    }
   }
-
   return (
     <div className="Login">
-      <Form onSubmit={handleSubmit}>
-        <Form.Group size="lg" controlId="username">
-          <Form.Label>Username</Form.Label>
-          <Form.Control
-            autoFocus
-            type="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group size="lg" controlId="password">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-        <Button block size="lg" type="submit" disabled={!validateForm()}>
-          Login
-        </Button>
-      </Form>
+      {(user.password !=="")?(
+        <div className="welcome">
+          <h2>welcome,<span>{user.username}</span></h2>
+          <Link to="/home">Home</Link>
+        </div>
+      ):(
+        <form onSubmit={submitHandler}>
+        <div className="form-inner">
+            <h2>Login</h2>
+            {(error !== "")? (<div className ="error">{error}</div>) : ""}
+            <div className="form-group">
+                <label htmlFor="username">Username:</label>
+                <input type="text" name="username" id="username" onChange={e => setDetails({...details,username: e.target.value})} value ={details.username}/>
+            </div>
+            <div className="form-group">
+                <label htmlFor="password">Password:</label>
+                <input type="text" name="password" id="password"onChange={e => setDetails({...details,password: e.target.value})} value ={details.password}/>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">login</button>
+            
+        </div>
+    </form>
+      )}
     </div>
-  );
+  )
 }
+export default Login;

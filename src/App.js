@@ -14,14 +14,14 @@ import CreateWarehouse from "./components/WareHouses/CreateWarehouse";
 import EditWarehouse from "./components/WareHouses/EditWarehouse";
 import CreateSupplier from "./components/Supplier/CreateSupplier"
 import EditSupplier from "./components/Supplier/EditSupplier"
-
+import Login from "./components/Login/Login"
 
 import "./App.css";
 
 function App() {
   return (
     <Switch>
-      <Route path="/" exact>
+      <Route path="/home" >
         <div className="App">
           <Sidebar />
           <Home />
@@ -102,6 +102,11 @@ function App() {
         <div className="App">
           <Sidebar />
           <EditSupplier />
+        </div>
+      </Route>
+      <Route path="/" >
+        <div className="App">
+          <Login />
         </div>
       </Route>
 
