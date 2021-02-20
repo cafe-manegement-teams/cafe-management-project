@@ -17,24 +17,24 @@ export const SidebarData = [
     icon: <ClearAllIcon />,
     link: "/goods",
   },
-  {
-    title: "Danh Sách Kho Hàng",
-    icon: <HouseIcon />,
-    link: "/warehouses",
-  },
-  {
-    title: "Danh Sách Phiếu Nhập",
-    icon: <ReceiptIcon />,
-    link: "/receiptbill",
-  },
-  {
-    title: "Danh Sách Phiếu Xuất",
-    icon: <ReceiptIcon />,
-    link: "/deliverybill",
-  },
-  {
-    title: "Nhà Cung Cấp",
-    icon: <PersonIcon />,
-    link: "/supplier",
-  },
+  // {
+  //   title: "Danh Sách Kho Hàng",
+  //   icon: <HouseIcon />,
+  //   link: "/warehouses",
+  // },
+  // {
+  //   title: "Danh Sách Phiếu Nhập",
+  //   icon: <ReceiptIcon />,
+  //   link: "/receiptbill",
+  // },
+  // {
+  //   title: "Danh Sách Phiếu Xuất",
+  //   icon: <ReceiptIcon />,
+  //   link: "/deliverybill",
+  // },
+  // {
+  //   title: "Nhà Cung Cấp",
+  //   icon: <PersonIcon />,
+  //   link: "/supplier",
+  // },
 ];
