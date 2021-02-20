@@ -20,7 +20,7 @@ import "./App.css";
 function App() {
   return (
     <Switch>
-      <Route path="/home">
+      <Route path="/" exact>
         <div className="App">
           <Sidebar />
           <Home />

@@ -3,12 +3,10 @@ import { SidebarData } from "./SidebarData";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
 
-// import HomeIcon from "@material-ui/icons/Home";
-
 function Sidebar() {
   return (
     <div className="sidebar">
-      <Link to="/home">
+      <Link to="/">
         <h2>Cafe Management System</h2>
       </Link>
 

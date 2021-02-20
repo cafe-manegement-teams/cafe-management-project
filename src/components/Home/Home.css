@@ -1,6 +1,14 @@
 .home {
   flex: 80%;
+  background-color: #009879;
 }
 .home h1 {
+  margin-top: 17px;
   text-align: center;
+}
+.home img {
+  margin-left: 150px;
+  margin-top: 30px;
+  width: 1000px;
+  height: 80vh;
 }
