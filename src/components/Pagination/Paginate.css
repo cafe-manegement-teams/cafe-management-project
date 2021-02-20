@@ -1,0 +1,10 @@
+.pagination {
+  position: absolute;
+  right: 30px;
+}
+.pagination li:hover {
+  cursor: pointer;
+}
+.pagination li p {
+  color: #009879;
+}

@@ -37,9 +37,4 @@ export const SidebarData = [
     icon: <PersonIcon />,
     link: "/supplier",
   },
-  {
-    title: "Báo Cáo",
-    icon: <AssessmentIcon />,
-    link: "/report",
-  },
 ];

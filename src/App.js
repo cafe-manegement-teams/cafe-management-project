@@ -2,7 +2,6 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Staff from "./components/Staff/Staff";
 import Sidebar from "./components/Sidebar/Sidebar";
-import Report from "./components/Report/Report";
 import Goods from "./components/Goods/Goods";
 import Warehouses from "./components/WareHouses/WareHouses";
 import Receipt from "./components/Receipt/Receipt";
@@ -12,16 +11,16 @@ import CreateGoods from "./components/Goods/CreateGoods";
 import EditGoods from "./components/Goods/EditGoods";
 import CreateWarehouse from "./components/WareHouses/CreateWarehouse";
 import EditWarehouse from "./components/WareHouses/EditWarehouse";
-import CreateSupplier from "./components/Supplier/CreateSupplier"
-import EditSupplier from "./components/Supplier/EditSupplier"
-import Login from "./components/Login/Login"
+import CreateSupplier from "./components/Supplier/CreateSupplier";
+import EditSupplier from "./components/Supplier/EditSupplier";
+import Login from "./components/Login/Login";
 
 import "./App.css";
 
 function App() {
   return (
     <Switch>
-      <Route path="/home" >
+      <Route path="/home">
         <div className="App">
           <Sidebar />
           <Home />
@@ -33,7 +32,6 @@ function App() {
           <Staff />
         </div>
       </Route>
-      // goods
       <Route path="/goods" exact>
         <div className="App">
           <Sidebar />
@@ -49,29 +47,28 @@ function App() {
       <Route path="/goods/edit">
         <div className="App">
           <Sidebar />
-          <EditGoods  />
+          <EditGoods />
         </div>
       </Route>
-      // warehouse
+
       <Route path="/warehouses" exact>
         <div className="App">
           <Sidebar />
           <Warehouses />
         </div>
       </Route>
-      <Route path="/warehouses/create" >
+      <Route path="/warehouses/create">
         <div className="App">
           <Sidebar />
           <CreateWarehouse />
         </div>
       </Route>
-      <Route path="/warehouses/edit" >
+      <Route path="/warehouses/edit">
         <div className="App">
           <Sidebar />
           <EditWarehouse />
         </div>
       </Route>
-
       <Route path="/receiptbill">
         <div className="App">
           <Sidebar />
@@ -84,38 +81,27 @@ function App() {
           <Delivery />
         </div>
       </Route>
-      
-      // supplier
       <Route path="/supplier" exact>
         <div className="App">
           <Sidebar />
           <Supplier />
         </div>
       </Route>
-      <Route path="/supplier/create" >
+      <Route path="/supplier/create">
         <div className="App">
           <Sidebar />
           <CreateSupplier />
         </div>
       </Route>
-      <Route path="/supplier/edit" >
+      <Route path="/supplier/edit">
         <div className="App">
           <Sidebar />
           <EditSupplier />
         </div>
       </Route>
-      <Route path="/" >
-        <div className="App">
-          <Login />
-        </div>
+      <Route path="/">
+        <div className="App">{/* <Login /> */}</div>
       </Route>
-
-      <Route path="/report">
-        <div className="App">
-          <Sidebar />
-          <Report />
-        </div>
-      </Route> 
     </Switch>
   );
 }
