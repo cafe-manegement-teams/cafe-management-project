@@ -1,13 +1,10 @@
 .header {
   width: 1250px;
-  margin-top: 20px;
-}
-
-.header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-left: 25px;
+  margin-top: 25px;
 }
 .header__middle {
   display: flex;
@@ -43,7 +40,7 @@
   border-radius: 5px;
   background-color: #009879;
   color: #fff;
-  margin-right: 6px;
+  margin-right: 30px;
 }
 .header__right--icon {
   border-right: 2px solid #fff;

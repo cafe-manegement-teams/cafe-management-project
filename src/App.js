@@ -3,14 +3,11 @@ import Home from "./components/Home/Home";
 import Staff from "./components/Staff/Staff";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Goods from "./components/Goods/Goods";
-import Warehouses from "./components/WareHouses/WareHouses";
 import Receipt from "./components/Receipt/Receipt";
 import Delivery from "./components/Delivery/Delivery";
 import Supplier from "./components/Supplier/Supplier";
 import CreateGoods from "./components/Goods/CreateGoods";
 import EditGoods from "./components/Goods/EditGoods";
-import CreateWarehouse from "./components/WareHouses/CreateWarehouse";
-import EditWarehouse from "./components/WareHouses/EditWarehouse";
 import CreateSupplier from "./components/Supplier/CreateSupplier";
 import EditSupplier from "./components/Supplier/EditSupplier";
 import Login from "./components/Login/Login";
@@ -51,24 +48,6 @@ function App() {
         </div>
       </Route>
 
-      <Route path="/warehouses" exact>
-        <div className="App">
-          <Sidebar />
-          <Warehouses />
-        </div>
-      </Route>
-      <Route path="/warehouses/create">
-        <div className="App">
-          <Sidebar />
-          <CreateWarehouse />
-        </div>
-      </Route>
-      <Route path="/warehouses/edit">
-        <div className="App">
-          <Sidebar />
-          <EditWarehouse />
-        </div>
-      </Route>
       <Route path="/receiptbill">
         <div className="App">
           <Sidebar />

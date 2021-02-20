@@ -3,6 +3,9 @@
   height: 100vh;
   background-color: #f3f3f3;
 }
+.sidebar a h2 {
+  font-weight: bold;
+}
 .sidebar a:hover {
   color: #3f997a;
 }

@@ -5,3 +5,63 @@ a {
   text-decoration: none;
   color: black;
 }
+
+/* table data */
+.styled-table {
+  border-collapse: collapse;
+  margin-left: 27px;
+  margin-top: 34px;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 1220px;
+}
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: center;
+}
+.styled-table tbody tr {
+  text-align: center;
+}
+.styled-table th,
+.styled-table td {
+  padding: 12px 25px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+.button-edit {
+  margin-right: 10px;
+  padding: 3px 3px;
+  background-color: #009879;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button-delete {
+  padding: 3px 3px;
+  background-color: #009879;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button-edit:hover {
+  background-color: #076b57;
+}
+.button-delete:hover {
+  background-color: #076b57;
+}
+/* end table data */
