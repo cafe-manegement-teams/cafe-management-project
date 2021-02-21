@@ -5,24 +5,45 @@ import "./CreateGoods.css";
 
 function CreateGoods() {
   return (
-    <form className="container">
-      <div className="form-group">
-        <label>Ma Hang Hoa</label>
-        <input type="text" className="form-control" id="mahanghoa" />
+    <div className="container">
+      <div className="row header">
+        <h1>HÀNG HÓA &nbsp;</h1>
+        <h3>Fill out the form below to learn more!</h3>
       </div>
-      <div className="form-group">
-        <label>Ten Hang Hoa</label>
-        <input type="text" className="form-control" id="tenhanghoa" />
-      </div>
-      <div className="form-group">
-        <label>Gia</label>
-        <input type="text" className="form-control" id="gia" />
-      </div>
-      <div className="form-group">
-        <label>Don Vi Tinh</label>
-        <input type="text" className="form-control" id="donvitinh" />
-      </div>
-    </form>
+      <form action="#">
+        <ul>
+          <li>
+            <p>
+              <label>Ma Hang Hoa</label>
+              <input type="text" name="mahanghoa" placeholder="HH001" />
+            </p>
+            <p>
+              <label>Ten Hang Hoa</label>
+              <input type="text" name="tenhanghoa" placeholder="Coffee" />
+            </p>
+            <p>
+              <label>Nhom Hang Hoa</label>
+              <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </p>
+            <p>
+              <label>Gia Nhap</label>
+              <input type="text" name="donvitinh" placeholder="30,000" />
+            </p>
+          </li>
+          <li>
+            <input className="btn btn-submit" type="submit" value="Submit" />
+            <small>
+              or press <strong>enter</strong>
+            </small>
+          </li>
+        </ul>
+      </form>
+    </div>
   );
 }
 
