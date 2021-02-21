@@ -1,6 +1,7 @@
 .pagination {
   position: absolute;
   right: 30px;
+  margin-top: 5px;
 }
 .pagination li:hover {
   cursor: pointer;
