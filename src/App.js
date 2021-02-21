@@ -13,6 +13,7 @@ import EditSupplier from "./components/Supplier/EditSupplier";
 import Login from "./components/Login/Login";
 
 import "./App.css";
+import StaffCreate from "./components/Staff/StaffCreate";
 
 function App() {
   return (
@@ -23,12 +24,22 @@ function App() {
           <Home />
         </div>
       </Route>
-      <Route path="/staff">
+
+      {/* staff */}
+      <Route path="/staff" exact>
         <div className="App">
           <Sidebar />
           <Staff />
         </div>
       </Route>
+      <Route path="/staff/create">
+        <div className="App">
+          <Sidebar />
+          <StaffCreate />
+        </div>
+      </Route>
+
+      {/* Goods */}
       <Route path="/goods" exact>
         <div className="App">
           <Sidebar />

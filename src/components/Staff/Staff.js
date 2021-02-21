@@ -24,7 +24,7 @@ function Staff() {
 
   return (
     <div>
-      <Header title="NHÂN VIÊN" />
+      <Header title="NHÂN VIÊN" link="/staff/create" />
       {/* table data */}
 
       <table className="styled-table">
