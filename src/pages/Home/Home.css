@@ -1,0 +1,34 @@
+.home {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  background-color: #009879;
+}
+.home h1 {
+  position: absolute;
+  left: 10%;
+  margin: 17px 0 0 200px;
+  font-weight: bold;
+}
+.home img {
+  position: absolute;
+  top: 100px;
+  left: 10%;
+  margin-left: 100px;
+  margin-top: 30px;
+  width: 1000px;
+  height: 80vh;
+}
+.home .navigate {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
+.navigate a {
+  background-color: #009879;
+  padding: 10px;
+  margin: 10px;
+}
+.navigate a:hover {
+  color: #fff;
+}

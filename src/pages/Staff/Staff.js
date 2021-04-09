@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Header from "../Header/Header";
 import StaffData from "../../data/StaffData";
-import Paginate from "../Pagination/Paginate";
+
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+import Header from "../../components/Header/Header";
+import Paginate from "../../components/Pagination/Paginate";
 
 function Staff() {
   const [staffs, setStaffs] = useState([]);

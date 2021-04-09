@@ -1,28 +1,41 @@
+import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
-import Staff from "./components/Staff/Staff";
+import Home from "./pages/Home/Home";
+import Staff from "./pages/Staff/Staff";
 import Sidebar from "./components/Sidebar/Sidebar";
-import Goods from "./components/Goods/Goods";
-import Receipt from "./components/Receipt/Receipt";
-import Delivery from "./components/Delivery/Delivery";
-import Supplier from "./components/Supplier/Supplier";
-import CreateGoods from "./components/Goods/CreateGoods";
-import EditGoods from "./components/Goods/EditGoods";
-import CreateSupplier from "./components/Supplier/CreateSupplier";
-import EditSupplier from "./components/Supplier/EditSupplier";
-import Login from "./components/Login/Login";
+import Goods from "./pages/Goods/Goods";
+
+import CreateGoods from "./pages/Goods/CreateGoods";
+import EditGoods from "./pages/Goods/EditGoods";
 
 import "./App.css";
-import StaffCreate from "./components/Staff/StaffCreate";
+import Sale from "./pages/Sale/Sale";
+import StaffCreate from "./pages/Staff/StaffCreate";
+import Login from "./pages/Login/Login";
 
 function App() {
   return (
     <Switch>
+      {/* Login */}
+      <Route path="/login" component={Login} />
+
+      {/* Home page */}
       <Route path="/" exact>
         <div className="App">
-          <Sidebar />
           <Home />
         </div>
+      </Route>
+
+      {/* Dashboard */}
+      <Route path="/dashboard" exact>
+        <div className="App">
+          <Sidebar />
+        </div>
+      </Route>
+
+      {/* sale */}
+      <Route path="/sale" exact>
+        <Sale />
       </Route>
 
       {/* staff */}
@@ -57,40 +70,6 @@ function App() {
           <Sidebar />
           <EditGoods />
         </div>
-      </Route>
-
-      <Route path="/receiptbill">
-        <div className="App">
-          <Sidebar />
-          <Receipt />
-        </div>
-      </Route>
-      <Route path="/deliverybill">
-        <div className="App">
-          <Sidebar />
-          <Delivery />
-        </div>
-      </Route>
-      <Route path="/supplier" exact>
-        <div className="App">
-          <Sidebar />
-          <Supplier />
-        </div>
-      </Route>
-      <Route path="/supplier/create">
-        <div className="App">
-          <Sidebar />
-          <CreateSupplier />
-        </div>
-      </Route>
-      <Route path="/supplier/edit">
-        <div className="App">
-          <Sidebar />
-          <EditSupplier />
-        </div>
-      </Route>
-      <Route path="/">
-        <div className="App">{/* <Login /> */}</div>
       </Route>
     </Switch>
   );

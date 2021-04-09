@@ -1,0 +1,46 @@
+.bill {
+  display: flex;
+  flex-direction: column;
+}
+.bill .title {
+  text-align: center;
+  background-color: #009879;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px 0;
+  color: #fff;
+}
+.bill .header {
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+}
+.bill .header input {
+  width: 480px;
+  height: 40px;
+  margin-left: 20px;
+}
+
+.form-bill {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  height: 450px;
+  overflow-y: scroll;
+}
+.form-bill::-webkit-scrollbar {
+  display: none;
+}
+
+.pay {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.pay .button-pay button {
+  background-color: #009879;
+  border: 0;
+  outline: none;
+  padding: 20px 20px;
+  border-radius: 10px;
+}

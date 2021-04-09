@@ -4,8 +4,8 @@ import "./Goods.css";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import GoodData from "../../data/GoodData";
-import Paginate from "../Pagination/Paginate";
-import Header from "../Header/Header";
+import Paginate from "../../components/Pagination/Paginate";
+import Header from "../../components/Header/Header";
 
 function Goods() {
   const [goods, setGoods] = useState([]);
@@ -26,7 +26,7 @@ function Goods() {
 
   return (
     <div>
-      <Header title="HÀNG HÓA" ho link="/goods/create" />
+      <Header title="HÀNG HÓA" link="/goods/create" />
 
       {/* table data */}
       <table className="styled-table">

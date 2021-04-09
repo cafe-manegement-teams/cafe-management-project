@@ -6,7 +6,7 @@ import "./Sidebar.css";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <Link to="/">
+      <Link to="/dashboard">
         <h2>Cafe Management System</h2>
       </Link>
 

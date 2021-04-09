@@ -1,0 +1,9 @@
+.all-product__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.all-product__item img {
+  margin-right: 10px;
+}

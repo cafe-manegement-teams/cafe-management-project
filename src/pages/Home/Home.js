@@ -7,6 +7,10 @@ function Home() {
     <div className="home">
       <h1>Welcom To Application Cafe Management</h1>
       <img src={homeImage} alt="home" />
+      <div className="navigate">
+        <a href="/sale">SALE</a>
+        <a href="/dashboard">DASHBOARD</a>
+      </div>
     </div>
   );
 }
