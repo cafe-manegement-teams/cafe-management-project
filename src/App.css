@@ -1,6 +1,11 @@
 .App {
   display: flex;
 }
+
+.App .imageDashboard {
+  width: 1290px;
+  height: 100vh;
+}
 a {
   text-decoration: none;
   color: black;

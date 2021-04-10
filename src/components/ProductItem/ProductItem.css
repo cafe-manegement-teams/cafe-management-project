@@ -6,4 +6,18 @@
 }
 .all-product__item img {
   margin-right: 10px;
+  width: 130px;
+  height: 120px;
+}
+
+.all-product__item .name {
+  font-weight: bold;
+  max-width: 80px;
+  margin-bottom: 3px;
+}
+
+.all-product__item .add {
+  background-color: #009879;
+  outline: none;
+  border-radius: 5px;
 }

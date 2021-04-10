@@ -1,25 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductSelect from "../ProductSelect/ProductSelect";
 import "./Bill.css";
+import { connect } from "react-redux";
 
-function Bill() {
+function Bill({ cart }) {
+  const [totalItems, setTotalItems] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  const timeElapsed = Date.now();
+
+  const today = new Date(timeElapsed);
+
+  useEffect(() => {
+    let items = 0;
+    let price = 0;
+
+    cart.forEach((item) => {
+      items += item.qty;
+      price += items + item.productPrice;
+    });
+    setTotalPrice(price);
+    setTotalItems(items);
+  }, [cart, totalItems, totalPrice, setTotalPrice, setTotalItems]);
   return (
     <div className="bill">
       <h3 className="title">Bill</h3>
       <div className="header">
-        <input type="text" className="date" placeholder="Date" />
+        <input
+          type="text"
+          className="date"
+          placeholder="Date"
+          value={today.toDateString()}
+        />
         <input type="text" className="name-employee" placeholder="Employee" />
       </div>
       <div className="form-bill">
-        <ProductSelect />
-        <ProductSelect />
-        <ProductSelect />
-        <ProductSelect />
-        <ProductSelect />
-        <ProductSelect />
-        <ProductSelect />
-        <ProductSelect />
-        <ProductSelect />
+        {cart.map((item) => {
+          return (
+            <ProductSelect
+              key={item.productId}
+              name={item.productName}
+              qty={item.qty}
+              price={item.productPrice}
+              productId={item.productId}
+            />
+          );
+        })}
       </div>
       <div className="pay">
         <div className="button-pay">
@@ -30,12 +56,18 @@ function Bill() {
           <p>Total money</p>
         </div>
         <div className="result">
-          <p>10</p>
-          <p>100.000</p>
+          <p>{totalItems}</p>
+          <p>{totalPrice}</p>
         </div>
       </div>
     </div>
   );
 }
 
-export default Bill;
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart.cart,
+  };
+};
+
+export default connect(mapStateToProps)(Bill);

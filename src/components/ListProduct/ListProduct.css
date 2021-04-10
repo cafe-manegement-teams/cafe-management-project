@@ -2,10 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 30px;
 }
 .list-product h3 {
-  margin-left: 70px;
+  margin-left: 30px;
   background-color: #009879;
   padding: 10px;
   border-radius: 10px;
@@ -13,7 +12,7 @@
 }
 
 .list-product .header form {
-  margin-right: 340px;
+  margin-right: 300px;
   margin-top: 10px;
 }
 .list-product .header input {
@@ -31,7 +30,4 @@
   margin-left: 10px;
   display: grid;
   grid-template-columns: auto auto auto;
-}
-.all-product .name {
-  font-weight: bold;
 }

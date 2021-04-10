@@ -1,9 +1,9 @@
 import React from "react";
 import ProductItem from "../ProductItem/ProductItem";
 import "./ListProduct.css";
-// import { BsSearch } from "react-icons/bs";
+import { connect } from "react-redux";
 
-function ListProduct() {
+function ListProduct({ products }) {
   return (
     <div className="list-product">
       <div className="header">
@@ -13,24 +13,26 @@ function ListProduct() {
         </form>
       </div>
       <div className="all-product">
-        <ProductItem name="cafe" price="30.000" />
-        <ProductItem name="cafe" price="30.000" />
-        <ProductItem name="cafe" price="30.000" />
-        <ProductItem name="cafe" price="30.000" />
-        <ProductItem name="cafe" price="30.000" />
-        <ProductItem name="cafe" price="30.000" />
-        <ProductItem name="cafe" price="30.000" />
-        <ProductItem name="cafe" price="30.000" />
-        <ProductItem name="cafe" price="30.000" />
-        <ProductItem name="cafe" price="30.000" />
-        <ProductItem name="cafe" price="30.000" />
-        <ProductItem name="cafe" price="30.000" />
-        <ProductItem name="cafe" price="30.000" />
-        <ProductItem name="cafe" price="30.000" />
-        <ProductItem name="cafe" price="30.000" />
+        {products.map((product) => {
+          return (
+            <ProductItem
+              key={product.productId}
+              name={product.productName}
+              price={product.productPrice}
+              imageUrl={product.Image}
+              productId={product.productId}
+            />
+          );
+        })}
       </div>
     </div>
   );
 }
 
-export default ListProduct;
+const mapStateToProps = (state) => {
+  return {
+    products: state.cart.products,
+  };
+};
+
+export default connect(mapStateToProps)(ListProduct);

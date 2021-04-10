@@ -12,6 +12,7 @@ import "./App.css";
 import Sale from "./pages/Sale/Sale";
 import StaffCreate from "./pages/Staff/StaffCreate";
 import Login from "./pages/Login/Login";
+import imageDashboard from "./image-staff.jpg";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Route path="/dashboard" exact>
         <div className="App">
           <Sidebar />
+          <img src={imageDashboard} alt="" className="imageDashboard" />
         </div>
       </Route>
 
