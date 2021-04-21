@@ -22,8 +22,18 @@
 .home .navigate {
   position: absolute;
   top: 50%;
-  left: 40%;
+  left: 35%;
 }
+.home .navigate p {
+  display: inline;
+  cursor: pointer;
+  background: #009879;
+  padding: 10px;
+}
+.home .navigate p:hover {
+  color: #fff;
+}
+
 .navigate a {
   background-color: #009879;
   padding: 10px;

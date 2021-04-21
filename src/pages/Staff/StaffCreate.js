@@ -1,54 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import axios from "../../api/axiosClient";
 import "./StaffCreate.css";
 
 function StaffCreate() {
+  let history = useHistory();
+  const [fullname, setFullName] = useState("");
+  const [datebirth, setDateBirth] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [position, sestPosition] = useState("");
+  const [errors, setErrors] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const staff = {
+    fullname,
+    datebirth,
+    phone,
+    address,
+    position,
+  };
+
+  const createStaff = async (e) => {
+    e.preventDefault();
+
+    if (
+      fullname === "" ||
+      datebirth === "" ||
+      phone === "" ||
+      address === "" ||
+      position === ""
+    ) {
+      setErrors("Input not empty!");
+      return;
+    }
+    const resp = await axios.post("/staff/create", staff);
+
+    setSuccess(resp.data);
+  };
+
   return (
-    <div className="container">
-      <div className="row header">
-        <h1>NHÂN VIÊN &nbsp;</h1>
-        <h3>Fill out the form below to learn more!</h3>
-      </div>
-      <form action="#">
-        <ul>
-          <li>
-            <p>
-              <label htmlFor="first_name">Ma Nhan Vien</label>
-              <input type="text" name="manhanvien" placeholder="001" />
-            </p>
-            <p>
-              <label htmlFor="last_name">Ten Nhan Vien</label>
-              <input type="text" name="tennhanvien" placeholder="Smith" />
-            </p>
-            <p>
-              <label htmlFor="last_name">Dia Chi</label>
-              <input
-                type="text"
-                name="diachi"
-                placeholder="341 Cao Dat p1 Q5"
-              />
-            </p>
-            <p>
-              <label htmlFor="last_name">Salary</label>
-              <input type="text" name="salary" placeholder="3000" />
-            </p>
-          </li>
-          <li>
-            <p>
-              <label htmlFor="phone">
-                phone <span className="req">*</span>
-              </label>
-              <input type="text" name="phone" placeholder="0913234566" />
-            </p>
-          </li>
-          <li>
-            <input className="btn btn-submit" type="submit" value="Submit" />
-            <small>
-              or press <strong>enter</strong>
-            </small>
-          </li>
-        </ul>
-      </form>
-    </div>
+    <form className="create-staff">
+      <h3>CREATE STAFF</h3>
+      <input
+        type="text"
+        placeholder="Full Name"
+        onChange={(e) => setFullName(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Date Of Birth"
+        onChange={(e) => setDateBirth(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Phone"
+        onChange={(e) => setPhone(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Address"
+        onChange={(e) => setAddress(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Position"
+        onChange={(e) => sestPosition(e.target.value)}
+      />
+      {errors && <p>{errors}</p>}
+      {success && <p>{success}</p>}
+      <button onClick={createStaff}>Create</button>
+      <button onClick={() => history.push("/staff")}>Cancel</button>
+    </form>
   );
 }
 

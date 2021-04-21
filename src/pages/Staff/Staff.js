@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import StaffData from "../../data/StaffData";
+import axios from "../../api/axiosClient";
 
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -12,7 +12,12 @@ function Staff() {
   const [staffPerpage, sestStaffPerPage] = useState(10);
 
   useEffect(() => {
-    setStaffs(StaffData);
+    async function fetchData() {
+      const resp = await axios.get("/staff");
+      // console.log(resp.data);
+      setStaffs(resp.data);
+    }
+    fetchData();
   }, []);
 
   // get current page
@@ -22,6 +27,13 @@ function Staff() {
 
   // change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const deleteStaff = (id) => {
+    const resp = axios.delete(`/staff?id=${id}`);
+    console.log(resp.data);
+
+    window.location.reload();
+  };
 
   return (
     <div>
@@ -34,23 +46,23 @@ function Staff() {
             <th>MA NHAN VIEN</th>
             <th>TEN NHAN VIEN</th>
             <th>DIA CHI</th>
-            <th>LUONG</th>
+            <th>Position</th>
             <th>UPDATE</th>
           </tr>
         </thead>
         <tbody>
           {currentStaff.map((staff) => (
-            <tr>
+            <tr key={staff.id}>
               <td>{staff.id}</td>
-              <td>{staff.name}</td>
+              <td>{staff.fullname}</td>
               <td>{staff.address}</td>
-              <td>{staff.salary}</td>
+              <td>{staff.position}</td>
               <td>
                 <button className="button-edit">
                   <EditIcon />
                 </button>
                 <button className="button-delete">
-                  <DeleteIcon />
+                  <DeleteIcon onClick={() => deleteStaff(staff.id)} />
                 </button>
               </td>
             </tr>

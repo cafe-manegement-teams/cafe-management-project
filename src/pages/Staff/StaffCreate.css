@@ -1,0 +1,35 @@
+.create-staff {
+  display: flex;
+  flex-direction: column;
+  background-color: #009879;
+  /* height: 420px; */
+  width: 600px;
+  padding: 0px 30px;
+  padding-bottom: 20px;
+  position: absolute;
+  top: 100px;
+  left: 600px;
+}
+.create-staff input {
+  margin: 10px 0px;
+  border-radius: 5px;
+}
+.create-staff h3 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.create-staff button {
+  cursor: pointer;
+  padding: 6px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  margin-top: 7px;
+  margin-bottom: 10px;
+  outline: none;
+  background: #fff;
+  border: none;
+}
+.create-staff button:hover {
+  background-color: #29c9a9;
+}

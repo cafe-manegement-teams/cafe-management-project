@@ -55,3 +55,6 @@
   background-color: #076b57;
   cursor: pointer;
 }
+.header__right a:hover {
+  color: #fff;
+}

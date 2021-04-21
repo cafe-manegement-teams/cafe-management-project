@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Staff from "./pages/Staff/Staff";
@@ -13,18 +13,31 @@ import Sale from "./pages/Sale/Sale";
 import StaffCreate from "./pages/Staff/StaffCreate";
 import Login from "./pages/Login/Login";
 import imageDashboard from "./image-staff.jpg";
+import Register from "./pages/Register/Register";
 
 function App() {
+  const [isLogged, setIsLogged] = useState(false);
+
+  useEffect(() => {
+    setIsLogged(localStorage.getItem("isLogged"));
+    console.log(isLogged);
+  }, [isLogged]);
+
+  if (!isLogged) {
+    return <Login />;
+  }
+
   return (
     <Switch>
-      {/* Login */}
-      <Route path="/login" component={Login} />
-
       {/* Home page */}
       <Route path="/" exact>
         <div className="App">
           <Home />
         </div>
+      </Route>
+
+      <Route path="/register" exact>
+        <Register />
       </Route>
 
       {/* Dashboard */}

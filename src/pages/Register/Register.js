@@ -1,33 +1,36 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "../../api/axiosClient";
-import "./Login.css";
 
-function Login() {
+function Register() {
   let history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState("");
 
   const user = {
     username,
     password,
   };
-
-  const login = async (e) => {
+  const register = async (e) => {
     e.preventDefault();
-    const resp = await axios.post("/login", user);
-    console.log(resp.data);
-    if (resp.data === true) {
-      localStorage.setItem("isLogged", "true");
 
+    if (user.username === "" || user.password === "") {
+      setErrors("username and password  not empty");
+      return;
+    }
+
+    const resp = await axios.post("/login/add", user);
+
+    if (resp.data) {
+      setErrors(resp.data);
       history.push("/");
-      window.location.reload();
     }
   };
 
   return (
     <form className="login">
-      <h3>Login</h3>
+      <h3>Register</h3>
       <input
         type="text"
         placeholder="Username"
@@ -38,9 +41,10 @@ function Login() {
         placeholder="Password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <input type="button" value="Submit" onClick={login} />
+      {errors && <p>{errors}</p>}
+      <input type="button" value="Submit" onClick={register} />
     </form>
   );
 }
 
-export default Login;
+export default Register;
