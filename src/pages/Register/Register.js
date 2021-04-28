@@ -42,7 +42,7 @@ function Register() {
         onChange={(e) => setPassword(e.target.value)}
       />
       {errors && <p>{errors}</p>}
-      <input type="button" value="Submit" onClick={register} />
+      <input type="submit" value="Submit" onClick={register} />
     </form>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import homeImage from "../../home-image.jpg";
+import homeImage from "../../asset/home-image.jpg";
 
 function Home() {
   const logout = () => {

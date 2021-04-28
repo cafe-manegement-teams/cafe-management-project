@@ -7,6 +7,7 @@ function Login() {
   let history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState("");
 
   const user = {
     username,
@@ -22,6 +23,8 @@ function Login() {
 
       history.push("/");
       window.location.reload();
+    } else {
+      setErrors("Wrong username or password");
     }
   };
 
@@ -38,7 +41,8 @@ function Login() {
         placeholder="Password"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <input type="button" value="Submit" onClick={login} />
+      {errors && <p>{errors}</p>}
+      <input type="submit" value="Submit" onClick={login} />
     </form>
   );
 }

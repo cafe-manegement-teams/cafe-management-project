@@ -6,11 +6,11 @@ import "./Sidebar.css";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <Link to="/dashboard">
+      <Link to="/">
         <h2>Cafe Management System</h2>
       </Link>
 
-      {SidebarData.map((val, key) => {
+      {SidebarData.map((val) => {
         return (
           <Link
             to={val.link}

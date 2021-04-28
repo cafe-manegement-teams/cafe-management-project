@@ -43,9 +43,9 @@ function Staff() {
       <table className="styled-table">
         <thead>
           <tr>
-            <th>MA NHAN VIEN</th>
-            <th>TEN NHAN VIEN</th>
-            <th>DIA CHI</th>
+            <th>ID</th>
+            <th>NAME STAFF</th>
+            <th>ADDRESS</th>
             <th>Position</th>
             <th>UPDATE</th>
           </tr>

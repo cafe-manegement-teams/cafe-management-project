@@ -1,10 +1,8 @@
 import React from "react";
 
 import PersonIcon from "@material-ui/icons/Person";
-import HouseIcon from "@material-ui/icons/House";
-import ClearAllIcon from "@material-ui/icons/ClearAll";
+import ListAltIcon from "@material-ui/icons/ListAlt";
 import ReceiptIcon from "@material-ui/icons/Receipt";
-import AssessmentIcon from "@material-ui/icons/Assessment";
 
 export const SidebarData = [
   {
@@ -14,12 +12,12 @@ export const SidebarData = [
   },
   {
     title: "Danh Sách Hàng Hóa",
-    icon: <ClearAllIcon />,
+    icon: <ListAltIcon />,
     link: "/goods",
   },
   {
-    title: "Nhà Cung Cấp",
-    icon: <PersonIcon />,
-    link: "/supplier",
+    title: "Danh Sách Hóa Đơn",
+    icon: <ReceiptIcon />,
+    link: "/bill",
   },
 ];

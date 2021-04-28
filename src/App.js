@@ -12,8 +12,10 @@ import "./App.css";
 import Sale from "./pages/Sale/Sale";
 import StaffCreate from "./pages/Staff/StaffCreate";
 import Login from "./pages/Login/Login";
-import imageDashboard from "./image-staff.jpg";
+import imageDashboard from "./asset/image-staff.jpg";
 import Register from "./pages/Register/Register";
+import ListBill from "./pages/Order/ListBill";
+import OrderDetail from "./pages/Order/OrderDetail";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -84,6 +86,20 @@ function App() {
         <div className="App">
           <Sidebar />
           <EditGoods />
+        </div>
+      </Route>
+
+      <Route path="/bill" exact>
+        <div className="App">
+          <Sidebar />
+          <ListBill />
+        </div>
+      </Route>
+
+      <Route path="/bill/detail/:orderId" exact>
+        <div className="App">
+          <Sidebar />
+          <OrderDetail />
         </div>
       </Route>
     </Switch>

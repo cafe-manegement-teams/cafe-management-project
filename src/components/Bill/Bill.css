@@ -6,7 +6,7 @@
   text-align: center;
   background-color: #009879;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 15px;
   padding: 10px 0;
   color: #fff;
 }
@@ -25,7 +25,7 @@
   margin-top: 10px;
   padding: 10px;
   border: 1px solid black;
-  height: 450px;
+  height: 500px;
   overflow-y: scroll;
 }
 .form-bill::-webkit-scrollbar {
@@ -43,4 +43,8 @@
   outline: none;
   padding: 20px 20px;
   border-radius: 10px;
+}
+
+.pay .button-pay .order {
+  /* margin-right: 1px; */
 }
