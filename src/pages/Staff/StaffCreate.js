@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "../../api/axiosClient";
 import "./StaffCreate.css";
@@ -9,34 +9,68 @@ function StaffCreate() {
   const [datebirth, setDateBirth] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  const [position, sestPosition] = useState("");
+  const [positionSelected, setPositionSelected] = useState(0);
+  const [shiftSelected, setShiftSelected] = useState(0);
   const [errors, setErrors] = useState("");
-  const [success, setSuccess] = useState("");
+  const [position, setPosition] = useState([]);
+  const [shift, setShift] = useState([]);
 
   const staff = {
     fullname,
     datebirth,
     phone,
     address,
-    position,
   };
 
-  const createStaff = async (e) => {
+  useEffect(() => {
+    async function fetchPosition() {
+      let positionData = await axios.get("/position/all");
+
+      if (positionData.data) {
+        setPosition(positionData.data);
+        // console.log(positionData.data);
+      }
+    }
+    async function fetchShift() {
+      let shiftData = await axios.get("/shift/all");
+      if (shiftData.data) {
+        setShift(shiftData.data);
+        // console.log(shiftData.data);
+      }
+    }
+    fetchPosition();
+    fetchShift();
+  }, []);
+
+  const createStaff = (e) => {
     e.preventDefault();
 
     if (
-      fullname === "" ||
-      datebirth === "" ||
-      phone === "" ||
-      address === "" ||
-      position === ""
+      staff.fullname === "" ||
+      staff.datebirth === "" ||
+      staff.phone === "" ||
+      staff.address === ""
     ) {
-      setErrors("Input not empty!");
+      setErrors("Input not valid!");
       return;
     }
-    const resp = await axios.post("/staff/create", staff);
+    if (shiftSelected === 0 || positionSelected === 0) {
+      setErrors("You forget set  shift and position");
+      return;
+    }
 
-    setSuccess(resp.data);
+    axios
+      .post(
+        `/shift/${shiftSelected}/position/${positionSelected}/staff/create`,
+        staff
+      )
+      .then((data) => {
+        if (data.data) {
+          setErrors(data.data);
+          return;
+        }
+        history.push("/staff");
+      });
   };
 
   return (
@@ -62,13 +96,31 @@ function StaffCreate() {
         placeholder="Address"
         onChange={(e) => setAddress(e.target.value)}
       />
-      <input
-        type="text"
-        placeholder="Position"
-        onChange={(e) => sestPosition(e.target.value)}
-      />
+      <h4>Position</h4>
+      <select
+        onChange={(e) => setPositionSelected(e.target.value)}
+        defaultValue={positionSelected}
+      >
+        {position &&
+          position.map((item) => (
+            <option value={item.id} key={item.id}>
+              {item.poname}
+            </option>
+          ))}
+      </select>
+      <h4>Shift</h4>
+      <select
+        onChange={(e) => setShiftSelected(e.target.value)}
+        defaultValue={shiftSelected}
+      >
+        {shift &&
+          shift.map((item) => (
+            <option value={item.id} key={item.id}>
+              {item.timework}
+            </option>
+          ))}
+      </select>
       {errors && <p>{errors}</p>}
-      {success && <p>{success}</p>}
       <button onClick={createStaff}>Create</button>
       <button onClick={() => history.push("/staff")}>Cancel</button>
     </form>

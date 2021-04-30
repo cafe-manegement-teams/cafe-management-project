@@ -44,7 +44,7 @@ function ListBill() {
 
   return (
     <div className="list__bill">
-      <Header title="Bill Order" />
+      <Header title="Bill Order" link="/sale" />
       <table className="styled-table">
         <thead>
           <tr>

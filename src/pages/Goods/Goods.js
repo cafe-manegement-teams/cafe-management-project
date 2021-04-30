@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Goods.css";
 
-import EditIcon from "@material-ui/icons/Edit";
-import DeleteIcon from "@material-ui/icons/Delete";
-import GoodData from "../../data/GoodData";
 import Paginate from "../../components/Pagination/Paginate";
 import Header from "../../components/Header/Header";
+import axiosClient from "../../api/axiosClient";
 
 function Goods() {
   const [goods, setGoods] = useState([]);
@@ -13,13 +11,21 @@ function Goods() {
   const [goodsPerPage, setGoodPerPage] = useState(10);
 
   useEffect(() => {
-    setGoods(GoodData);
+    async function fetchGood() {
+      let goods = await axiosClient.get("/material/all");
+      if (goods.data) {
+        setGoods(goods.data);
+        // console.log(goods.data);
+      }
+    }
+    fetchGood();
   }, []);
 
   // get current page
   const indexOfLastGood = currentPage * goodsPerPage;
   const indexOfFirstGood = indexOfLastGood - goodsPerPage;
   const currentGoods = goods.slice(indexOfFirstGood, indexOfLastGood);
+  // console.log(currentGoods);
 
   // change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -33,27 +39,21 @@ function Goods() {
         <thead>
           <tr>
             <th>NAME</th>
-            <th>PRICE</th>
             <th>QUANTITY</th>
-            <th>UPDATE</th>
+            <th>UNIT</th>
+            <th>UNIT PRICE</th>
           </tr>
         </thead>
         <tbody>
-          {currentGoods.map((good) => (
-            <tr>
-              <td>{good.name}</td>
-              <td>{good.price}</td>
-              <td>{good.quantity}</td>
-              <td>
-                <button className="button-edit">
-                  <EditIcon />
-                </button>
-                <button className="button-delete">
-                  <DeleteIcon />
-                </button>
-              </td>
-            </tr>
-          ))}
+          {currentGoods &&
+            currentGoods.map((good) => (
+              <tr key={good.id}>
+                <td>{good.materialname}</td>
+                <td>{good.quantity}</td>
+                <td>{good.unit}</td>
+                <td>{good.unitprice}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
       <Paginate

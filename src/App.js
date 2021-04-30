@@ -16,6 +16,9 @@ import imageDashboard from "./asset/image-staff.jpg";
 import Register from "./pages/Register/Register";
 import ListBill from "./pages/Order/ListBill";
 import OrderDetail from "./pages/Order/OrderDetail";
+import Receipt from "./pages/Receipt/Receipt";
+import Delivery from "./pages/Delivery/Delivery";
+import StaffEdit from "./pages/Staff/StaffEdit";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -62,10 +65,16 @@ function App() {
           <Staff />
         </div>
       </Route>
-      <Route path="/staff/create">
+      <Route path="/staff/create" exact>
         <div className="App">
           <Sidebar />
           <StaffCreate />
+        </div>
+      </Route>
+      <Route path="/staff/:staffId" exact>
+        <div className="App">
+          <Sidebar />
+          <StaffEdit />
         </div>
       </Route>
 
@@ -76,13 +85,13 @@ function App() {
           <Goods />
         </div>
       </Route>
-      <Route path="/goods/create">
+      <Route path="/goods/create" exact>
         <div className="App">
           <Sidebar />
           <CreateGoods />
         </div>
       </Route>
-      <Route path="/goods/edit">
+      <Route path="/goods/edit/:id" exact>
         <div className="App">
           <Sidebar />
           <EditGoods />
@@ -100,6 +109,20 @@ function App() {
         <div className="App">
           <Sidebar />
           <OrderDetail />
+        </div>
+      </Route>
+
+      <Route path="/receipt" exact>
+        <div className="App">
+          <Sidebar />
+          <Receipt />
+        </div>
+      </Route>
+
+      <Route path="/delivery" exact>
+        <div className="App">
+          <Sidebar />
+          <Delivery />
         </div>
       </Route>
     </Switch>

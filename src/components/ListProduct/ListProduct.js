@@ -10,14 +10,15 @@ function ListProduct({ products }) {
   let history = useHistory();
 
   const [listProduct, setListProduct] = useState([]);
-  console.log(listProduct);
+
+  console.log(listProduct[0]);
 
   useEffect(() => {
     if (!products[0]) {
       return null;
     }
-    setListProduct(products[0]);
-  }, []);
+    setListProduct(products);
+  }, [products]);
 
   return (
     <div className="list-product">
@@ -28,8 +29,8 @@ function ListProduct({ products }) {
         </form>
       </div>
       <div className="all-product">
-        {listProduct &&
-          listProduct.map((product) => {
+        {listProduct[0] &&
+          listProduct[0].map((product) => {
             return (
               <ProductItem
                 key={product.id}

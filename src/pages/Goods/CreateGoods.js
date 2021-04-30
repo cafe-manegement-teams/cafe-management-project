@@ -1,49 +1,61 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import axiosClient from "../../api/axiosClient";
 
 // import "./CreateGoods.css";
 
 function CreateGoods() {
+  let history = useHistory();
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [unit, setUnit] = useState("");
+  const [data, setData] = useState("");
+
+  const good = {
+    materialname: name,
+    unitprice: price,
+    unit: unit,
+  };
+
+  const createGood = (e) => {
+    e.preventDefault();
+    if (good.materialname === "" || good.unitprice === "" || good.unit === "") {
+      alert("Input not valid");
+      return;
+    }
+    // console.log(good);
+    axiosClient.post("/material/create", good).then((data) => {
+      // console.log(data.data);
+      if (data.data) {
+        setData(data.data);
+        history.push("/goods");
+      }
+    });
+  };
+
   return (
-    <div className="container">
-      <div className="row header">
-        <h1>HÀNG HÓA &nbsp;</h1>
-        <h3>Fill out the form below to learn more!</h3>
-      </div>
-      <form action="#">
-        <ul>
-          <li>
-            <p>
-              <label>Ma Hang Hoa</label>
-              <input type="text" name="mahanghoa" placeholder="HH001" />
-            </p>
-            <p>
-              <label>Ten Hang Hoa</label>
-              <input type="text" name="tenhanghoa" placeholder="Coffee" />
-            </p>
-            <p>
-              <label>Nhom Hang Hoa</label>
-              <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-            </p>
-            <p>
-              <label>Gia Nhap</label>
-              <input type="text" name="donvitinh" placeholder="30,000" />
-            </p>
-          </li>
-          <li>
-            <input className="btn btn-submit" type="submit" value="Submit" />
-            <small>
-              or press <strong>enter</strong>
-            </small>
-          </li>
-        </ul>
-      </form>
-    </div>
+    <form className="create-staff">
+      <h3>CREATE GOOD</h3>
+      <input
+        type="text"
+        placeholder="Material Name"
+        onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Unit Price"
+        onChange={(e) => setPrice(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Unit"
+        onChange={(e) => setUnit(e.target.value)}
+      />
+
+      {data && <p>{data}</p>}
+      <button onClick={createGood}>Create</button>
+      <button onClick={() => history.push("/goods")}>Cancel</button>
+    </form>
   );
 }
 
