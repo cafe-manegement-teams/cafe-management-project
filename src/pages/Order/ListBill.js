@@ -5,11 +5,14 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import DnsIcon from "@material-ui/icons/Dns";
 import "./ListBill.css";
 import { useHistory } from "react-router-dom";
+import Paginate from "../../components/Pagination/Paginate";
 
 function ListBill() {
   let history = useHistory();
 
   const [bill, setBill] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [billPerPage, setBillPerPage] = useState(10);
 
   useEffect(() => {
     async function fetchBill() {
@@ -21,7 +24,12 @@ function ListBill() {
       }
     }
     fetchBill();
-  }, [bill]);
+  }, []);
+
+  // get current page
+  const indexOfLastBill = currentPage * billPerPage;
+  const indexOfFirstBill = indexOfLastBill - billPerPage;
+  const currentBill = bill.slice(indexOfFirstBill, indexOfLastBill);
 
   const deleteBill = async (id) => {
     let deleteBill = await axiosClient.delete(`/order/${id}/delete`);
@@ -30,6 +38,9 @@ function ListBill() {
       window.location.reload();
     }
   };
+
+  // change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="list__bill">
@@ -45,8 +56,8 @@ function ListBill() {
           </tr>
         </thead>
         <tbody>
-          {bill.map((item) => (
-            <tr>
+          {currentBill.map((item) => (
+            <tr key={item.id}>
               <td>{item.id}</td>
               <td>{item.create_at}</td>
               <td>{item.total}</td>
@@ -69,6 +80,11 @@ function ListBill() {
           ))}
         </tbody>
       </table>
+      <Paginate
+        goodsPerPage={billPerPage}
+        totalGoods={bill.length}
+        paginate={paginate}
+      />
     </div>
   );
 }

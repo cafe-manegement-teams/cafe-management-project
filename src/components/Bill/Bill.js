@@ -19,11 +19,11 @@ function Bill({ cart }) {
 
     // eslint-disable-next-line array-callback-return
     cart.forEach((item) => {
-      console.log(item);
+      // console.log(item);
       quantity += item.qty;
       price += item.qty * item.price;
 
-      console.log(quantity);
+      // console.log(quantity);
     });
 
     setTotal(price);
@@ -32,6 +32,10 @@ function Bill({ cart }) {
 
   const createOrder = async (e) => {
     e.preventDefault();
+    if (cart.length === 0) {
+      alert("No product");
+      return;
+    }
     let order = await axios.post("/order/create", {});
     setOrderId(order.data);
     alert("Create order!");

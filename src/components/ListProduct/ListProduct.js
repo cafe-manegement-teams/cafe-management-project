@@ -5,16 +5,19 @@ import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 function ListProduct({ products }) {
+  console.log(products);
+
   let history = useHistory();
 
   const [listProduct, setListProduct] = useState([]);
+  console.log(listProduct);
 
   useEffect(() => {
-    if (!products) {
+    if (!products[0]) {
       return null;
     }
     setListProduct(products[0]);
-  }, [products]);
+  }, []);
 
   return (
     <div className="list-product">
@@ -25,16 +28,17 @@ function ListProduct({ products }) {
         </form>
       </div>
       <div className="all-product">
-        {listProduct.map((product) => {
-          return (
-            <ProductItem
-              key={product.id}
-              name={product.productname}
-              price={product.price}
-              id={product.id}
-            />
-          );
-        })}
+        {listProduct &&
+          listProduct.map((product) => {
+            return (
+              <ProductItem
+                key={product.id}
+                name={product.productname}
+                price={product.price}
+                id={product.id}
+              />
+            );
+          })}
       </div>
     </div>
   );

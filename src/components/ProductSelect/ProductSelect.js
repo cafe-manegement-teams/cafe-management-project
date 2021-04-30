@@ -13,6 +13,7 @@ function ProductSelect({
   adjustQty,
 }) {
   const [qtyInput, setQtyInput] = useState(qty);
+  console.log(qty);
 
   const onChangeHandler = (e) => {
     setQtyInput(e.target.value);
@@ -30,7 +31,7 @@ function ProductSelect({
         <input
           type="number"
           onChange={onChangeHandler}
-          value={qtyInput}
+          value={qty}
           name="qty"
           min="1"
         />

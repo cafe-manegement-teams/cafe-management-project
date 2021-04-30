@@ -1,5 +1,4 @@
 import * as actionTypes from "./cartTypes";
-import productData from "../../data/ProductData";
 import axios from "../../api/axiosClient";
 
 const products = [];
