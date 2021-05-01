@@ -31,7 +31,7 @@ function Goods() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div>
+    <div className="good">
       <Header title="HÀNG HÓA" link="/goods/create" />
 
       {/* table data */}

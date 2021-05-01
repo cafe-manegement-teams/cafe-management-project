@@ -1,0 +1,11 @@
+.material__selectedItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #3f997a;
+  padding: 3px;
+  width: 100%;
+}
+.material__selectedItem p {
+  margin-top: 20px;
+}

@@ -19,6 +19,10 @@ import OrderDetail from "./pages/Order/OrderDetail";
 import Receipt from "./pages/Receipt/Receipt";
 import Delivery from "./pages/Delivery/Delivery";
 import StaffEdit from "./pages/Staff/StaffEdit";
+import CreateReceipt from "./pages/Receipt/CreateReceipt";
+import ReceiptDetail from "./pages/Receipt/ReceiptDetail";
+import DeliveryCreate from "./pages/Delivery/DeliveryCreate";
+import DeliveryDetail from "./pages/Delivery/DeliveryDetail";
 
 function App() {
   const [isLogged, setIsLogged] = useState(false);
@@ -119,10 +123,38 @@ function App() {
         </div>
       </Route>
 
+      <Route path="/receipt/create" exact>
+        <div className="App">
+          <Sidebar />
+          <CreateReceipt />
+        </div>
+      </Route>
+
+      <Route path="/receipt/:id" exact>
+        <div className="App">
+          <Sidebar />
+          <ReceiptDetail />
+        </div>
+      </Route>
+
       <Route path="/delivery" exact>
         <div className="App">
           <Sidebar />
           <Delivery />
+        </div>
+      </Route>
+
+      <Route path="/delivery/create" exact>
+        <div className="App">
+          <Sidebar />
+          <DeliveryCreate />
+        </div>
+      </Route>
+
+      <Route path="/delivery/:id" exact>
+        <div className="App">
+          <Sidebar />
+          <DeliveryDetail />
         </div>
       </Route>
     </Switch>

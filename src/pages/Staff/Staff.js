@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "../../api/axiosClient";
+import "./Staff.css";
 
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -38,7 +39,7 @@ function Staff() {
   };
 
   return (
-    <div>
+    <div className="staff">
       <Header title="NHÂN VIÊN" link="/staff/create" />
       {/* table data */}
 

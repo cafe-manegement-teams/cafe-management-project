@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
-import "./CreateReceipt.css";
-import axios from "../../api/axiosClient";
+import { useHistory } from "react-router-dom";
+import axiosClient from "../../api/axiosClient";
 import MaterialItem from "../../components/Material/MaterialItem";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
-import axiosClient from "../../api/axiosClient";
-import { useHistory } from "react-router-dom";
+import "./DeliveryCreate.css";
 
-function CreateReceipt() {
+function DeliveryCreate() {
   let history = useHistory();
   const [material, setMaterial] = useState([]);
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
     function fetchMaterial() {
-      axios.get("/material/all").then((data) => {
+      axiosClient.get("/material/all").then((data) => {
         if (data.data) {
           setMaterial(data.data);
         }
@@ -58,16 +57,15 @@ function CreateReceipt() {
       return;
     }
 
-    axiosClient.post("/receipt/create", cart).then((data) => {
+    axiosClient.post("/delivery/create", cart).then((data) => {
       if (data.data) {
-        history.push("/receipt");
+        history.push("/delivery");
       }
     });
   };
-
   return (
-    <form className="receipt">
-      <h3>NHAP PHIEU</h3>
+    <form className="delivery">
+      <h3>XUAT PHIEU</h3>
       <div>
         <div className="list__material">
           <p>List Material</p>
@@ -101,10 +99,10 @@ function CreateReceipt() {
         </div>
       </div>
       <button type="submit" className="save" onClick={submit}>
-        SAVE RECEIPT
+        SAVE DELIVERY
       </button>
     </form>
   );
 }
 
-export default CreateReceipt;
+export default DeliveryCreate;

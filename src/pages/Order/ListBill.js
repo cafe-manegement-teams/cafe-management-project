@@ -6,6 +6,7 @@ import DnsIcon from "@material-ui/icons/Dns";
 import "./ListBill.css";
 import { useHistory } from "react-router-dom";
 import Paginate from "../../components/Pagination/Paginate";
+import "./ListBill.css";
 
 function ListBill() {
   let history = useHistory();

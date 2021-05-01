@@ -1,0 +1,8 @@
+.material__item {
+  background-color: #3f997a;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.material__item p {
+  padding-top: 21px;
+}

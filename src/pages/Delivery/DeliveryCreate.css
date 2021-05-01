@@ -1,15 +1,15 @@
-.receipt {
+.delivery {
   width: 100%;
 }
-.receipt h3 {
+.delivery h3 {
   text-align: center;
   margin-top: 30px;
 }
-.receipt div {
+.delivery div {
   display: flex;
   margin-top: 23px;
 }
-.receipt div .list__material {
+.delivery div .list__material {
   padding: 10px;
   border: 1px solid black;
   flex-direction: column;
@@ -23,13 +23,13 @@
 .list__material::-webkit-scrollbar {
   display: none;
 }
-.receipt .list__material p {
+.delivery .list__material p {
   text-align: center;
 }
-.receipt .material__selected p {
+.delivery .material__selected p {
   text-align: center;
 }
-.receipt div .material__selected {
+.delivery div .material__selected {
   border: 1px solid black;
   padding: 10px;
   width: 600px;
@@ -70,7 +70,7 @@
   background: #fff;
   cursor: pointer;
 }
-.receipt .save {
+.delivery .save {
   margin-top: 10px;
   position: absolute;
   right: 60px;
@@ -80,7 +80,7 @@
   background: #3f997a;
   border-radius: 4px;
 }
-.receipt .save:hover {
+.delivery .save:hover {
   background: #21664e;
   color: #fff;
 }
