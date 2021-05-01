@@ -56,7 +56,7 @@ function Delivery() {
               <tr key={item.id}>
                 <td>{item.create_at}</td>
                 <td>{item.status}</td>
-                <td>
+                <td className="update">
                   <button
                     className="button-edit"
                     onClick={() => history.push(`/delivery/${item.id}`)}

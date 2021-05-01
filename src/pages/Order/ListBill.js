@@ -63,7 +63,7 @@ function ListBill() {
               <td>{item.create_at}</td>
               <td>{item.total}</td>
               <td>{item.status}</td>
-              <td>
+              <td className="update">
                 <button
                   className="button-edit"
                   onClick={() => history.push(`/bill/detail/${item.id}`)}

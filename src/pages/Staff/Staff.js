@@ -50,22 +50,18 @@ function Staff() {
             <th>DATE OF BIRTH</th>
             <th>PHONE</th>
             <th>ADDRESS</th>
-            <th>TIMEWORK</th>
-            <th>POSITION</th>
-            <th>SALARY</th>
             <th>UPDATE</th>
           </tr>
         </thead>
         <tbody>
           {currentStaff.map((staff) => (
             <tr key={staff.id}>
-              <td>{staff.fullname}</td>
+              <td onClick={() => history.push(`/staff/infor/${staff.id}`)}>
+                {staff.fullname}
+              </td>
               <td>{staff.datebirth}</td>
               <td>{staff.phone}</td>
               <td>{staff.address}</td>
-              <td>{staff.shift.timework}</td>
-              <td>{staff.position.salary}</td>
-              <td>{staff.position.poname}</td>
               <td className="update">
                 <button
                   className="button-edit"

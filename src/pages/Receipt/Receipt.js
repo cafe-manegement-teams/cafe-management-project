@@ -55,7 +55,7 @@ function Receipt() {
                 <td>{item.create_at}</td>
                 <td>{item.status}</td>
                 <td>{item.total}</td>
-                <td>
+                <td className="update">
                   <button
                     className="button-edit"
                     onClick={() => history.push(`/receipt/${item.id}`)}
