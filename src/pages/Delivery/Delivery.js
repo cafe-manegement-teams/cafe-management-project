@@ -11,7 +11,7 @@ function Delivery() {
   let history = useHistory();
   const [delivery, setDelivery] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [deliveryPerPage, setReceiptPerPage] = useState(10);
+  const [deliveryPerPage, setReceiptPerPage] = useState(7);
 
   useEffect(() => {
     function fetchReceipt() {
@@ -46,6 +46,7 @@ function Delivery() {
       <table className="styled-table">
         <thead>
           <tr>
+            <th>ID</th>
             <th>DATE</th>
             <th>STATUS</th>
             <th>INFOR</th>
@@ -55,6 +56,7 @@ function Delivery() {
           {currentDelivery &&
             currentDelivery.map((item) => (
               <tr key={item.id}>
+                <td>{item.id}</td>
                 <td>{item.create_at}</td>
                 <td>{item.status}</td>
                 <td className="update">

@@ -13,7 +13,7 @@ function Staff() {
 
   const [staffs, setStaffs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [staffPerpage, sestStaffPerPage] = useState(10);
+  const [staffPerpage, sestStaffPerPage] = useState(6);
 
   useEffect(() => {
     async function fetchData() {

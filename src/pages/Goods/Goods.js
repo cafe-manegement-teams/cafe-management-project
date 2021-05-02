@@ -8,7 +8,7 @@ import axiosClient from "../../api/axiosClient";
 function Goods() {
   const [goods, setGoods] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [goodsPerPage, setGoodPerPage] = useState(10);
+  const [goodsPerPage, setGoodPerPage] = useState(13);
 
   useEffect(() => {
     async function fetchGood() {

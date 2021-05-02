@@ -12,10 +12,10 @@ function Header({ title, link }) {
       <div className="header__left">
         <h3>{title}</h3>
       </div>
-      <div className="header__middle">
+      {/* <div className="header__middle">
         <SearchIcon className="header__middle--icon" />
         <input placeholder="Search here" className="header__middle--input" />
-      </div>
+      </div> */}
       {link && (
         <div className="header__right" onClick={() => history.push(link)}>
           <AddIcon className="header__right--icon" />
