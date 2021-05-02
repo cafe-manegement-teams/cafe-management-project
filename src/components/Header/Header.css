@@ -15,7 +15,7 @@
   top: 3px;
   left: 8px;
   width: 18px;
-  color: #009879;
+  color: #879096;
 }
 .header__middle .header__middle--input {
   border: 1px solid grey;
@@ -28,32 +28,17 @@
 }
 .header__middle .header__middle--input:hover,
 .header__middle .header__middle--input:focus {
-  border: 1.5px solid #3f997a;
+  border: 1.5px solid #879096;
   background-color: white;
 }
 .header__right {
+  cursor: pointer;
   display: flex;
   align-items: center;
-  width: 80px;
+  padding: 0px 10px;
   height: 30px;
-  border-radius: 5px;
-  background-color: #009879;
+  border-radius: 3px;
+  background-color: #879096;
   color: #fff;
   margin-right: 30px;
-}
-.header__right--icon {
-  border-right: 2px solid #fff;
-}
-
-.header__right a {
-  margin-top: 15px;
-  margin-left: 6px;
-  color: #fff;
-}
-.header__right:hover {
-  background-color: #076b57;
-  cursor: pointer;
-}
-.header__right a:hover {
-  color: #fff;
 }

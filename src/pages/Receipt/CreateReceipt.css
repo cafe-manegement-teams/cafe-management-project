@@ -1,5 +1,6 @@
 .receipt {
-  width: 100%;
+  width: 80%;
+  background: #fff;
 }
 .receipt h3 {
   text-align: center;
@@ -9,11 +10,14 @@
   display: flex;
   margin-top: 23px;
 }
+.list__material p {
+  font-weight: bold;
+}
 .receipt div .list__material {
   padding: 10px;
   border: 1px solid black;
   flex-direction: column;
-  margin-left: 50px;
+  margin-left: 30px;
   margin-right: 20px;
   width: 600px;
   height: 600px;
@@ -46,12 +50,14 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #3f997a;
+  background: #879096;
   padding: 3px;
+  color: #fff;
   width: 100%;
 }
 .material__selectedItem p {
   margin-top: 20px;
+  font-weight: bold;
 }
 .material__selectedItem input {
   width: 70px;
@@ -63,24 +69,31 @@
 .material__selectedItem .add {
   padding: 0px 10px;
   background: #fff;
+  border: 1px solid black;
+  color: black;
   cursor: pointer;
 }
 .material__selectedItem .sub {
   padding: 0px 10px;
   background: #fff;
+  color: black;
+  border: 1px solid black;
   cursor: pointer;
 }
 .receipt .save {
   margin-top: 10px;
   position: absolute;
-  right: 60px;
-  padding: 10px;
+  right: 30px;
+  padding: 10px 20px;
+  font-weight: bold;
   outline: none;
   border: none;
-  background: #3f997a;
+  background: #fff;
+  border: 1px solid black;
   border-radius: 4px;
 }
 .receipt .save:hover {
-  background: #21664e;
+  background: #879096;
   color: #fff;
+  border: none;
 }

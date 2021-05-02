@@ -37,7 +37,7 @@ function Receipt() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <div className="list__receipt">
-      <Header title="PHIẾU NHẬP" link="/receipt/create" />
+      <Header title="RECEIPT" link="/receipt/create" />
       {/* table data */}
       <table className="styled-table">
         <thead>

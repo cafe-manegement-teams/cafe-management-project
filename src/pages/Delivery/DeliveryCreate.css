@@ -1,5 +1,6 @@
 .delivery {
-  width: 100%;
+  width: 80%;
+  background: #fff;
 }
 .delivery h3 {
   text-align: center;
@@ -13,7 +14,7 @@
   padding: 10px;
   border: 1px solid black;
   flex-direction: column;
-  margin-left: 50px;
+  margin-left: 30px;
   margin-right: 20px;
   width: 600px;
   height: 600px;
@@ -46,7 +47,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #3f997a;
+  background-color: #879096;
   padding: 3px;
   width: 100%;
 }
@@ -73,14 +74,17 @@
 .delivery .save {
   margin-top: 10px;
   position: absolute;
-  right: 60px;
-  padding: 10px;
+  right: 30px;
+  padding: 10px 20px;
+  font-weight: bold;
   outline: none;
   border: none;
-  background: #3f997a;
+  background: #fff;
+  border: 1px solid black;
   border-radius: 4px;
 }
 .delivery .save:hover {
-  background: #21664e;
+  background: #879096;
   color: #fff;
+  border: none;
 }

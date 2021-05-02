@@ -1,44 +1,46 @@
 .home {
   width: 100%;
   position: relative;
-  height: 100vh;
-  background-color: #009879;
+  height: 800px;
 }
 .home h1 {
   position: absolute;
-  left: 10%;
+  left: 15%;
   margin: 17px 0 0 200px;
   font-weight: bold;
 }
 .home img {
-  position: absolute;
-  top: 100px;
-  left: 10%;
-  margin-left: 100px;
-  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 120px;
   width: 1000px;
-  height: 80vh;
+  height: 600px;
 }
 .home .navigate {
   position: absolute;
   top: 50%;
-  left: 35%;
-}
-.home .navigate p {
-  display: inline;
-  cursor: pointer;
-  background: #009879;
-  padding: 10px;
-}
-.home .navigate p:hover {
-  color: #fff;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.navigate a {
-  background-color: #009879;
-  padding: 10px;
-  margin: 10px;
+.home .navigate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 4px 4px;
 }
-.navigate a:hover {
+.home .navigate button {
+  margin: 5px;
+  outline: none;
+  border: 1px solid black;
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 3px;
+  background: #fff;
+}
+.home .navigate button:hover {
+  background-color: black;
   color: #fff;
 }

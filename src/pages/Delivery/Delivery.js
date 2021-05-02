@@ -5,6 +5,7 @@ import DnsIcon from "@material-ui/icons/Dns";
 import { useHistory } from "react-router-dom";
 import axiosClient from "../../api/axiosClient";
 import Paginate from "../../components/Pagination/Paginate";
+import "./delivery.css";
 
 function Delivery() {
   let history = useHistory();
@@ -39,8 +40,8 @@ function Delivery() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="list__receipt">
-      <Header title="PHIẾU XUAT" link="/delivery/create" />
+    <div className="list__delivery">
+      <Header title="DELIVERY" link="/delivery/create" />
       {/* table data */}
       <table className="styled-table">
         <thead>

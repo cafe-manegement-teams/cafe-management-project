@@ -44,7 +44,7 @@ function Bill({ cart }) {
   const pay = async (e) => {
     e.preventDefault();
     if (cart.length === 0) {
-      alert("No");
+      alert("Not allow");
       return;
     }
     if (!orderId) {
@@ -84,16 +84,12 @@ function Bill({ cart }) {
             CREATE ORDER
           </button>
           <button onClick={pay} className="pay">
-            PAY
+            PAY HERE
           </button>
         </div>
         <div className="pay-total">
-          <p>Total Quantity</p>
-          <p>Total money</p>
-        </div>
-        <div className="result">
-          <p>{totalItems}</p>
-          <p>{total}</p>
+          <p>Total Quantity: {totalItems}</p>
+          <p>Total money: {total}</p>
         </div>
       </div>
     </div>

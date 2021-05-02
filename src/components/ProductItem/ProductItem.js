@@ -7,13 +7,10 @@ import "./ProductItem.css";
 function ProductItem({ name, price, id, addToCart }) {
   return (
     <div className="all-product__item">
-      <img src={imageCafe} alt="" />
+      <img src={imageCafe} alt="" onClick={() => addToCart(id)} />
       <div>
         <p className="name">{name}</p>
         <p className="price">{price}</p>
-        <button className="add" onClick={() => addToCart(id)}>
-          Add
-        </button>
       </div>
     </div>
   );

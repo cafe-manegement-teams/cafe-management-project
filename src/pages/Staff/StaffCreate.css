@@ -1,7 +1,7 @@
 .create-staff {
   display: flex;
   flex-direction: column;
-  background-color: #009879;
+  background-color: #879096;
   /* height: 420px; */
   width: 600px;
   padding: 0px 30px;
@@ -22,7 +22,7 @@
 .create-staff button {
   cursor: pointer;
   padding: 6px;
-  background-color: #f3f3f3;
+
   border-radius: 5px;
   margin-top: 7px;
   margin-bottom: 10px;
@@ -31,5 +31,6 @@
   border: none;
 }
 .create-staff button:hover {
-  background-color: #29c9a9;
+  background-color: #879096;
+  border: 1px solid black;
 }

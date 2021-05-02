@@ -4,7 +4,7 @@
 
 .App .imageDashboard {
   width: 1290px;
-  height: 100vh;
+  height: 801px;
 }
 a {
   text-decoration: none;
@@ -20,12 +20,12 @@ a {
   font-family: sans-serif;
   min-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  width: 1280px;
+  width: 1220px;
   /* max-width: 1300px; */
   /* width: 100%; */
 }
 .styled-table thead tr {
-  background-color: #009879;
+  background-color: #879096;
   color: #ffffff;
   text-align: center;
 }
@@ -46,11 +46,11 @@ a {
 }
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #879096;
 }
 .styled-table tbody tr.active-row {
   font-weight: bold;
-  color: #009879;
+  color: #879096;
 }
 .update {
   display: flex;
@@ -62,22 +62,26 @@ a {
 
 .button-edit {
   padding: 3px 3px;
-  background-color: #009879;
+  background-color: #fff;
+  border: 1px solid black;
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: 10px;
 }
 .button-delete {
   padding: 3px 3px;
-  background-color: #009879;
+  background-color: #fff;
+  border: 1px solid black;
   border-radius: 5px;
   cursor: pointer;
 }
 .button-edit:hover {
-  background-color: #076b57;
+  background-color: #879096;
+  color: #fff;
 }
 .button-delete:hover {
-  background-color: #076b57;
+  background-color: #879096;
+  color: #fff;
 }
 /* end table data */
 

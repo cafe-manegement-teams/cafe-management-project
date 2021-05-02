@@ -40,7 +40,7 @@ function Staff() {
 
   return (
     <div className="staff">
-      <Header title="NHÂN VIÊN" link="/staff/create" />
+      <Header title="STAFF" link="/staff/create" />
       {/* table data */}
 
       <table className="styled-table">

@@ -1,6 +1,7 @@
 .material__item {
-  background-color: #3f997a;
+  background-color: #879096;
   justify-content: space-around;
+  color: #fff;
   cursor: pointer;
 }
 .material__item p {

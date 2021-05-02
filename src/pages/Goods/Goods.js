@@ -32,7 +32,7 @@ function Goods() {
 
   return (
     <div className="good">
-      <Header title="HÀNG HÓA" link="/goods/create" />
+      <Header title="MATERIAL" link="/goods/create" />
 
       {/* table data */}
       <table className="styled-table">

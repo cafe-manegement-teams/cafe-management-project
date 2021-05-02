@@ -65,7 +65,7 @@ function DeliveryCreate() {
   };
   return (
     <form className="delivery">
-      <h3>XUAT PHIEU</h3>
+      <h3>DELIVERY</h3>
       <div>
         <div className="list__material">
           <p>List Material</p>

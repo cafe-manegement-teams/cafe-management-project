@@ -24,9 +24,9 @@ function ListProduct({ products }) {
     <div className="list-product">
       <div className="header">
         <h3 onClick={() => history.push("/")}>Cafe Product</h3>
-        <form>
+        {/* <form>
           <input type="text" placeholder="search product here ...!" />
-        </form>
+        </form> */}
       </div>
       <div className="all-product">
         {listProduct[0] &&

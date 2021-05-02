@@ -3,17 +3,15 @@
   height: 800px;
   background-color: #f3f3f3;
 }
-.sidebar a h2 {
-  font-weight: bold;
-}
-.sidebar a:hover {
-  color: #3f997a;
-}
+
 .sidebar h2 {
   text-align: center;
   cursor: pointer;
   margin-top: 20px;
   font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
 }
 .sidebarItem {
   display: flex;
@@ -23,7 +21,7 @@
 
 .sidebarItem:hover {
   color: #fff;
-  background-color: #3f997a;
+  background-color: #879096;
   border-left: 3px solid #fff;
   border-right: 3px solid #fff;
 }
@@ -45,7 +43,7 @@
 }
 #active .sidebarItem {
   color: #fff;
-  background-color: #3f997a;
+  background-color: #879096;
   border-left: 3px solid #fff;
   border-right: 3px solid #fff;
 }

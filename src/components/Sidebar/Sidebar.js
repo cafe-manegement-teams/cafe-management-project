@@ -1,14 +1,14 @@
 import React from "react";
 import { SidebarData } from "./SidebarData";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./Sidebar.css";
 
 function Sidebar() {
+  let history = useHistory();
+
   return (
     <div className="sidebar">
-      <Link to="/">
-        <h2>Cafe Management System</h2>
-      </Link>
+      <h2 onClick={() => history.push("/")}>Cafe Management System</h2>
 
       {SidebarData.map((val) => {
         return (

@@ -67,7 +67,7 @@ function CreateReceipt() {
 
   return (
     <form className="receipt">
-      <h3>NHAP PHIEU</h3>
+      <h3>RECEIPT</h3>
       <div>
         <div className="list__material">
           <p>List Material</p>
