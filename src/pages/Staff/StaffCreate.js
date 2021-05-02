@@ -121,7 +121,9 @@ function StaffCreate() {
           ))}
       </select>
       {errors && <p>{errors}</p>}
-      <button onClick={createStaff}>CREATE STAFF</button>
+      <button onClick={createStaff} className="create">
+        CREATE STAFF
+      </button>
       <button onClick={() => history.push("/staff")}>CANCEL</button>
     </form>
   );

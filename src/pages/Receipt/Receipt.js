@@ -11,7 +11,7 @@ function Receipt() {
   let history = useHistory();
   const [receipt, setReceipt] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [receiptPerPage, setReceiptPerPage] = useState(7);
+  const [receiptPerPage, setReceiptPerPage] = useState(5);
 
   useEffect(() => {
     function fetchReceipt() {

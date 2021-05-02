@@ -11,7 +11,7 @@ function Delivery() {
   let history = useHistory();
   const [delivery, setDelivery] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [deliveryPerPage, setReceiptPerPage] = useState(7);
+  const [deliveryPerPage, setReceiptPerPage] = useState(5);
 
   useEffect(() => {
     function fetchReceipt() {
