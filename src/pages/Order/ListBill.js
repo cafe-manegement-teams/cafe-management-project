@@ -13,7 +13,7 @@ function ListBill() {
 
   const [bill, setBill] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [billPerPage, setBillPerPage] = useState(10);
+  const [billPerPage, setBillPerPage] = useState(5);
 
   useEffect(() => {
     async function fetchBill() {
